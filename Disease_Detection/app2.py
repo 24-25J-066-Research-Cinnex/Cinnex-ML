@@ -26,10 +26,8 @@ except Exception as e:
 # Assuming the model expects an input shape of (128, 128, 3)
 DEFAULT_IMAGE_SIZE = (128, 128)
 
-def preprocess_image(file: UploadFile):
+def preprocess_image(image_data: bytes):
     try:
-        # Read the file content and convert it to an io.BytesIO object
-        image_data = file.file.read()
         image = tf.keras.preprocessing.image.load_img(BytesIO(image_data), target_size=DEFAULT_IMAGE_SIZE)
         image_array = tf.keras.preprocessing.image.img_to_array(image)
         image_array = np.array([image_array])  # Convert single image to a batch.
@@ -45,14 +43,13 @@ def predict_disease(image_array):
         logging.info(f"Prediction raw output: {prediction}")
         predicted_class_label = label_binarizer.inverse_transform(prediction)
         logging.info(f"Predicted class label: {predicted_class_label}")
-            
         # Ensure the predicted class label is JSON-serializable
         return str(predicted_class_label[0])
     except Exception as e:
         logging.error(f"Error during prediction: {e}")
         raise HTTPException(status_code=500, detail="Prediction error.")
 
-def calculate_disease_spread(image_data, predicted_class_label):
+def calculate_disease_spread(image_data: bytes, predicted_class_label):
     try:
         if predicted_class_label != 'Cinnamon_Healthy Leaf':  # Assuming 'Cinnamon_Healthy Leaf' is the healthy class
             img = cv2.imdecode(np.frombuffer(image_data, np.uint8), cv2.IMREAD_COLOR)
@@ -69,9 +66,8 @@ def calculate_disease_spread(image_data, predicted_class_label):
             diseased_pixels = cv2.countNonZero(mask)
             total_pixels = img.shape[0] * img.shape[1]
             disease_spread_percentage = (diseased_pixels / total_pixels) * 100
-            logging.info(f"disease_spread_percentage: {disease_spread_percentage}")
 
-            return str(disease_spread_percentage)
+            return disease_spread_percentage
         else:
             return 0  # Healthy leaf, 0% disease spread
     except Exception as e:
@@ -84,10 +80,10 @@ async def predict(file: UploadFile):
     logging.info(f"Received file: {file.filename}, Request ID: {request_id}")
     try:
         # Read the file content
-        image_data = file.file.read()
+        image_data = await file.read()
 
         # Preprocess the image
-        image_array = preprocess_image(file)
+        image_array = preprocess_image(image_data)
         logging.info(f"Image array for prediction: {image_array}")
 
         # Predict the disease
