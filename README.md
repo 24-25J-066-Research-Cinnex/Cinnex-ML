@@ -1,8 +1,12 @@
 # Cinnex  
+Git repositories- 
+
+1. **Backend (API With ML Models) -> https://github.com/24-25J-066-Research-Cinnex/Cinnex-ML.git
+2. **Front-End(Mobile App) -> https://github.com/24-25J-066-Research-Cinnex/Cinnex-MobileApp.git
 
 Cinnex is a final-year research project focused on integrating advanced digital technologies to benefit cinnamon farming. The project comprises four main function-based components:  
 
-1. **Cinnamon Price Forecast**: Predicts cinnamon prices based on historical market data, regional demand and supply trends, and economic indicators.  
+1. **Cinnamon Price Forecast**: Predicts cinnamon prices based on historical market data, region and Cinnamon Grades.  
 2. **Leaf Spot Disease Prediction**: Detects cinnamon leaf diseases based on observable symptoms using advanced image processing.  
 3. **Cinnamon Species Identification**: Identifies cinnamon species using machine learning models and one-shot learning techniques.  
 4. **Cinnamon Grade Identification System**: Ensures precise and consistent cinnamon grading through image recognition techniques.  
@@ -24,10 +28,10 @@ Cinnex is a final-year research project focused on integrating advanced digital 
 ### Cinnamon Price Forecast  
 Predicts cinnamon prices by analyzing:  
 - Historical market data  
-- Regional demand and supply variations  
-- Economic indicators  
+- Region
+- Cinnamon Grades 
 
-#### Model 1  
+#### Machine Learning Models  
 Utilizes advanced machine learning techniques, including LSTM and regression models, to provide location-specific and accurate price predictions.  
 
 ---
@@ -35,7 +39,7 @@ Utilizes advanced machine learning techniques, including LSTM and regression mod
 ### Leaf Spot Disease Prediction  
 Predicts the presence of leaf spot disease in cinnamon plants based on visible symptoms and diagnostic patterns.  
 
-#### Model 1  
+#### Convolutional Neural Network Model
 Employs image processing and classification algorithms to detect and diagnose diseases accurately.  
 
 ---
@@ -43,7 +47,7 @@ Employs image processing and classification algorithms to detect and diagnose di
 ### Cinnamon Species Identification  
 Identifies various cinnamon species using advanced techniques to enhance crop monitoring and yield quality.  
 
-#### Model 1  
+#### SVM Model  
 Utilizes image processing and one-shot learning to classify and detect new species with minimal training data.  
 
 ---
@@ -51,7 +55,7 @@ Utilizes image processing and one-shot learning to classify and detect new speci
 ### Cinnamon Grade Identification System  
 Automates the grading process of cinnamon quills using machine learning to ensure quality and consistency.  
 
-#### Model 1  
+#### SVM Model 
 Uses advanced image recognition techniques to standardize cinnamon grading, providing accurate and reliable results.  
 
 ---
