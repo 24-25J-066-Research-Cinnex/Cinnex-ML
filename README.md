@@ -60,5 +60,8 @@ Uses advanced image recognition techniques to standardize cinnamon grading, prov
 
 ---
 
+## System Architecture
+![conceptual diagram](https://github.com/user-attachments/assets/67a2eec7-b5b2-47f5-8ea2-fab1cc066a18)
+
 This project revolutionizes cinnamon farming through cutting-edge digital solutions, offering real-time insights and recommendations to farmers, enabling better decision-making, and fostering sustainable agricultural practices.
 
