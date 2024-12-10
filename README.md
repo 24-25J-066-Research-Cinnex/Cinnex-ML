@@ -1,92 +1,67 @@
-# Cinnex
+# Cinnex  
+Git repositories- 
 
-Cinnex is a Reaserch project of Final year that have 4 main function base components 
-Function 01 -predicts cinnamon prices based on the historical market prices, regional demand and supply data, and economic indicators Gather location-specific data.
-Function 02-predict the diseases of cinnamon Leaf based on the symptoms.
+1. **Backend (API With ML Models) -> https://github.com/24-25J-066-Research-Cinnex/Cinnex-ML.git
+2. **Front-End(Mobile App) -> https://github.com/24-25J-066-Research-Cinnex/Cinnex-MobileApp.git
 
-## Table of Contents
-1. Functions
-    -  Cinnamon Price Forecast
-        -  Model 1
-    -  Leaf Spot Disease
-        -  Model 1
-2. API
-3. How to Setup
-4. Others
+Cinnex is a final-year research project focused on integrating advanced digital technologies to benefit cinnamon farming. The project comprises four main function-based components:  
+
+1. **Cinnamon Price Forecast**: Predicts cinnamon prices based on historical market data, region and Cinnamon Grades.  
+2. **Leaf Spot Disease Prediction**: Detects cinnamon leaf diseases based on observable symptoms using advanced image processing.  
+3. **Cinnamon Species Identification**: Identifies cinnamon species using machine learning models and one-shot learning techniques.  
+4. **Cinnamon Grade Identification System**: Ensures precise and consistent cinnamon grading through image recognition techniques.  
 
 ---
 
-## 1. Functions
+## Table of Contents  
 
-### Function 1: Cinnamon Price Forecast
-#### Model 1: Linear Regression
-
-- **Dataset (Drive or GitHub URL)**: [Cinnamon Prices Dataset](https://drive.google.com/drive/folders/1bqkIzgF1zOCagfuHsg3Qrw9N_gkPDHck?usp=sharing)
-- **Final Code (Folder URL)**: [Source Code](https://github.com/username/repo/tree/main/src)
-- **Use Technologies and Model**: Python, scikit-learn, Pandas
-- **Model Label**: Cinnamon Price
-- **Model Features**: Location, Year, Month, Grade
-<!-- - **Model (GitHub or Drive URL)**: [Model File](https://github.com/username/repo/blob/main/models/linear_regression.pkl) -->
-<!-- - **Tokenizer (GitHub or Drive URL)**: [Tokenizer File](https://github.com/username/repo/blob/main/tokenizers/tokenizer.pkl) -->
-<!-- - **Scaler (GitHub or Drive URL)**: [Scaler File](https://github.com/username/repo/blob/main/scalers/scaler.pkl) -->
-- **Accuracy**:0.91
-<!-- - **How to Load and Get Prediction for One Input**:
-    ```python
-    import joblib
-
-    model = joblib.load('models/linear_regression.pkl')
-    scaler = joblib.load('scalers/scaler.pkl')
-
-    input_data = [[2500, 4, 'Suburban']]
-    scaled_data = scaler.transform(input_data)
-    prediction = model.predict(scaled_data)
-    print("Predicted Price:", prediction)
-    ``` -->
-
-### Function 2: Leaf Spot disease detection
-#### Model 2: Leaf Spot disease Idendifier
-
-## 2. API
-
-<!-- - **Use Technology**: FastAPI
-- **API Folder (Drive or GitHub URL)**: [API Source Code](https://github.com/username/repo/tree/main/api)
-- **API Folder Screenshot**: 
-    - ![API Folder Screenshot](https://example.com/screenshot.png)
-- **API Testing Swagger Screenshots for All Endpoints**:
-    - ![Swagger Endpoint 1](https://example.com/swagger1.png) -->
+1. [Functions](#functions)  
+    - [Cinnamon Price Forecast](#cinnamon-price-forecast)  
+    - [Leaf Spot Disease Prediction](#leaf-spot-disease-prediction)  
+    - [Cinnamon Species Identification](#cinnamon-species-identification)  
+    - [Cinnamon Grade Identification System](#cinnamon-grade-identification-system)  
 
 ---
 
-## 3. How to Setup
+## Functions  
 
-### Pre-requisites
-- Python v3.10 or higher
-- pip v21.2.4 or higher
+### Cinnamon Price Forecast  
+Predicts cinnamon prices by analyzing:  
+- Historical market data  
+- Region
+- Cinnamon Grades 
 
-### Steps
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/24-25J-066-Research-Cinnex/Cinnex-ML.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd cinnex-ml
-    ```
-3. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-4. Run the application:
-    ```bash
-    fastapi dev Component_1/app.py # For Component 1
-    fastapi dev Component_2/app.py # For Component 2
-    ```
+#### Machine Learning Models  
+Utilizes advanced machine learning techniques, including LSTM and regression models, to provide location-specific and accurate price predictions.  
 
-5. How to activate environment
-   ```bash
-    python -m venv cinnex
-    cinnex\Scripts\activate
-    ```
+---
 
-## 4. Others
-"# Cinnex-ML" 
+### Leaf Spot Disease Prediction  
+Predicts the presence of leaf spot disease in cinnamon plants based on visible symptoms and diagnostic patterns.  
+
+#### Convolutional Neural Network Model
+Employs image processing and classification algorithms to detect and diagnose diseases accurately.  
+
+---
+
+### Cinnamon Species Identification  
+Identifies various cinnamon species using advanced techniques to enhance crop monitoring and yield quality.  
+
+#### SVM Model  
+Utilizes image processing and one-shot learning to classify and detect new species with minimal training data.  
+
+---
+
+### Cinnamon Grade Identification System  
+Automates the grading process of cinnamon quills using machine learning to ensure quality and consistency.  
+
+#### SVM Model 
+Uses advanced image recognition techniques to standardize cinnamon grading, providing accurate and reliable results.  
+
+---
+
+## System Architecture
+![conceptual diagram](https://github.com/user-attachments/assets/67a2eec7-b5b2-47f5-8ea2-fab1cc066a18)
+
+This project revolutionizes cinnamon farming through cutting-edge digital solutions, offering real-time insights and recommendations to farmers, enabling better decision-making, and fostering sustainable agricultural practices.
+
