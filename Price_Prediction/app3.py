@@ -73,7 +73,7 @@ async def predict_price(request: PredictionRequest):
     try:
         # Parse inputs
         location = request.location
-        grade = request.grade + '(Average Price)'
+        grade = request.grade + ' '+'(Average Price)'
         forecast_date = request.forecast_date
 
         # Validate date
