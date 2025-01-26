@@ -66,6 +66,7 @@ def calculate_disease_spread(image_data: bytes, predicted_class_label):
             diseased_pixels = cv2.countNonZero(mask)
             total_pixels = img.shape[0] * img.shape[1]
             disease_spread_percentage = (diseased_pixels / total_pixels) * 100
+            disease_spread_percentage= round(disease_spread_percentage, 2)
 
             return disease_spread_percentage
         else:
@@ -74,7 +75,7 @@ def calculate_disease_spread(image_data: bytes, predicted_class_label):
         logging.error(f"Error during disease spread calculation: {e}")
         raise HTTPException(status_code=500, detail="Disease spread calculation error")
 
-@app.post("/newpredict")
+@app.post("/diseasepredict")
 async def predict(file: UploadFile):
     request_id = uuid.uuid4()
     logging.info(f"Received file: {file.filename}, Request ID: {request_id}")
@@ -104,7 +105,6 @@ async def predict(file: UploadFile):
     return {
         "prediction": predicted_class_label,
         "disease_spread_percentage": disease_spread_percentage,
-        "request_id": str(request_id)
     }
 
 if __name__ == "__main__":

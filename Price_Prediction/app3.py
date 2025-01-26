@@ -87,9 +87,10 @@ async def predict_price(request: PredictionRequest):
 
         # Make prediction
         predicted_price = forecast_price(series, forecast_date_parsed)
+        predicted_price = round(predicted_price, 2)
 
         logging.info(f"Prediction successful: {predicted_price}")
-        return {"location": location, "grade": grade, "forecast_date": forecast_date, "predicted_price": predicted_price}
+        return {"predicted_price": predicted_price}
     except ValueError as ve:
         logging.error(f"ValueError: {ve}")
         raise HTTPException(status_code=400, detail=str(ve))
